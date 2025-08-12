@@ -1,8 +1,9 @@
-# LimeonHub
+---
+title: Podstránka
+---
 
-## Vitaj!
+# Ahoj z podstránky!
 
-Toto je moja stránka vytvorená z Markdownu.
+Toto je podstránka.
 
-```lua
-print("Lua kód ako príklad")
+[Späť na hlavnú](./)

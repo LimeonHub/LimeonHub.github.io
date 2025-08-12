@@ -1,13 +1,15 @@
+-->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Name</title>
+    <title>Welcome to website of VasekCZ230</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css?v=2.4.1">
 
     <style>
         body {
@@ -55,19 +57,34 @@
 <body>
     <div id="container">
         <div id="header">
-            <h1>Title</h1>
+            <h1>Welcome to website of VasekCZ230!</h1>
         </div>
         <table cellspacing="0" cellpadding="0">
             <tr>
                 <td id="content">
 					<marquee scrollamount="8">To enter my website, click on the image below.</marquee>
-                    <a href="https://example.com"><img src="../img/redirect.jpg" width="100%" height="auto"></a>
+                    <a href="https://vasekcz230.github.io/home"><img src="../img/packupscale.jpg" width="100%" height="auto"></a>
                 </td>
             </tr>
         </table>
         <div id="footer">
-          <p>&copy; 2025 EnderSlovakD - All rights reserved.</p>
+            <p>&copy; 2025 VasekCZ230 - All rights reserved.</p>
         </div>
     </div>
+    <script>
+        function checkSparkleCursor() {
+            const currentHour = new Date().getHours();
+            const shouldActivate = (currentHour >= 22 || currentHour < 2);
+            const existingScript = document.querySelector('script[src="../js/sparklecursor.js"]');
+            if (shouldActivate && !existingScript) {
+                const script = document.createElement('script');
+                script.src = '../js/sparklecursor.js';
+                document.head.appendChild(script);
+            } else if (!shouldActivate && existingScript) {
+                existingScript.remove();
+            }
+        }
+        checkSparkleCursor();
+    </script>
 </body>
 </html>

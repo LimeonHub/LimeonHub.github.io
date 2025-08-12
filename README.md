@@ -1,6 +1,3 @@
----
-title: Moja stránka
----
 
 # Vitaj!
 Toto je moja stránka vytvorená z Markdownu.

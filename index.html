@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SaB Tutorials</title>
+
+  <!-- ================= KONFIGURÁCIA =================
+       Tu hore vieš upraviť obsah bez zásahu do kódu nižšie. -->
+  <script>
+    const CONFIG = {
+      headerText: "Steal a Brainrot - Ako získať Robuxy a ďalsie",
+      links: [
+        { label: "Robuxy", url: "https://tinyurl.com/robloxgamepasscz" },
+        { label: "Brainroty", url: "https://tinyurl.com/robloxgamepasscz" },
+        { label: "Admin Cmds", url: "https://tinyurl.com/robloxgamepasscz" }
+      ],
+      yapTitle: "Prečo je to účinné pre Steal a Brainrot",
+      yapText: "Jednoduché získavanie Brainrotou cez Tlačidlá Ktoré sa využívajú veľmi jednoducho a sú bezpečne na Použitie, Pretože využívame Bezpečný Https čo znamená Http (internetová stránka) s (secure ako bezpečné)",
+      effValue: 72
+    };
+  </script>
+  <!-- =============================================== -->
+
+  <style>
+    :root{
+      --bg:#0f1115; --panel:#151923; --muted:#8b94a7; --text:#eaf0ff; --brand:#4f8cff; --ok:#36d399;
+      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(79,140,255,.15), transparent 60%),
+                  radial-gradient(900px 600px at -10% 110%, rgba(54,211,153,.12), transparent 60%), var(--bg);
+      color:var(--text);
+    }
+    .wrap{max-width:950px; margin:40px auto; padding:0 20px}
+    header{display:flex; align-items:center; gap:14px; margin-bottom:22px}
+    .logo{width:44px;height:44px; border-radius:12px; background:linear-gradient(135deg, var(--brand), #6ddcff); box-shadow:var(--shadow)}
+    h1{font-size:clamp(22px, 4vw, 34px); margin:0}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); border:1px solid rgba(255,255,255,.08);
+          border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 16px; border-radius:12px;
+      border:1px solid rgba(255,255,255,.12); background:linear-gradient(180deg, rgba(79,140,255,.2), rgba(79,140,255,.12));
+      color:white; text-decoration:none; font-weight:700; transition:.2s transform, .2s filter; cursor:pointer;
+    }
+    .btn:hover{transform: translateY(-1px); filter:brightness(1.1)}
+
+    .btnRow{display:flex; flex-wrap:wrap; gap:12px}
+
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:999px; background:rgba(255,255,255,.06);
+           border:1px solid rgba(255,255,255,.08); font-weight:600;}
+    .dot{width:10px;height:10px; border-radius:50%; background:var(--ok)}
+
+    .meter{height:14px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.1); border-radius:999px; overflow:hidden}
+    .meter > div{height:100%; background:linear-gradient(90deg, var(--ok), #6ddcff); transition: width .25s}
+
+    footer{opacity:.8; margin:24px 0 60px; font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo" aria-hidden="true"></div>
+      <h1 id="hdr"></h1>
+    </header>
+
+    <section class="card">
+      <div id="links" class="btnRow"></div>
+    </section>
+
+    <div style="height:18px"></div>
+
+    <aside class="card">
+      <div class="row" style="display:flex; justify-content:space-between; align-items:center">
+        <span class="badge"><span class="dot"></span> Účinné na Steal a Brainrot</span>
+        <span style="font-size:12px; color:#8b94a7"></span>
+      </div>
+      <h2 id="yapTitle"></h2>
+      <p id="yapText"></p>
+      <label for="eff">Šanca na Výhru</label>
+      <input id="eff" type="range" min="0" max="100" style="width:100%"/>
+      <div class="meter"><div id="bar"></div></div>
+      <div id="effLbl" style="font-size:12px; color:#8b94a7; margin-top:6px"></div>
+    </aside>
+
+    <footer>
+      Powered by <strong>roblox.com</strong>
+    </footer>
+  </div>
+
+  <script>
+    // načítanie konfigurácie do UI
+    document.getElementById('hdr').textContent = CONFIG.headerText;
+    const linksContainer = document.getElementById('links');
+    CONFIG.links.forEach(link => {
+      const a = document.createElement('a');
+      a.textContent = link.label;
+      a.href = link.url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.className = "btn";
+      linksContainer.appendChild(a);
+    });
+
+    document.getElementById('yapTitle').textContent = CONFIG.yapTitle;
+    document.getElementById('yapText').textContent = CONFIG.yapText;
+
+    const eff = document.getElementById('eff');
+    const bar = document.getElementById('bar');
+    const effLbl = document.getElementById('effLbl');
+    eff.value = CONFIG.effValue;
+    function updateEff(){
+      bar.style.width = eff.value + '%';
+      let tone = 'nízka';
+      if(eff.value>=70) tone = 'vysoká'; else if(eff.value>=40) tone = 'stredná';
+      effLbl.textContent = `Šanca: ${eff.value}% – ${tone} Že vyhráte dačo dobré`;
+    }
+    eff.addEventListener('input', updateEff);
+    updateEff();
+  </script>
+</body>
+</html>

@@ -3,35 +3,39 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SaB Tutorials</title>
+  <title>Steal a Brainrot - Výhry – 4 tlačidlá</title>
 
-  <!-- ================= KONFIGURÁCIA ================= -->
+  <!-- ================= KONFIGURÁCIA (uprav podľa videa) ================= -->
   <script>
     const CONFIG = {
       headerText: "Steal a Brainrot - Ako získať Robuxy a ďalšie",
       links: [
         { label: "Robuxy",    url: "https://tinyurl.com/robloxgamepasscz" },
-        { label: "Brainroty", url: "https://tinyurl.com/robloxgamepasscz" },
-        { label: "Admin Cmds",url: "https://tinyurl.com/robloxgamepasscz" }
+        { label: "Brainroty",     url: "https://tinyurl.com/robloxgamepasscz" },
+        { label: "Admin Cmds", url: "https://tinyurl.com/robloxgamepasscz" },
+        { label: "Grow a Garden",  url: "https://limeonhub.github.io/GrowGarden" }
       ],
-      yapTitle: "Prečo je to účinné pre Steal a Brainrot",
+ yapTitle: "Prečo je to účinné pre Steal a Brainrot",
       yapText: `Jednoduché získavanie Brainrotov cez tlačidlá – používajú sa veľmi jednoducho a bezpečne.
-      Preto využívame protokol <strong>HTTPS</strong> (a ten je veľmi bezpečný).<br>
+      Preto využívame protokol <strong>HTTPS</strong> (a ten je veľmi bezpečný). a my si dávame pozor nech ste najviac vo bezpečí<br>
       <h2>Ako si získať ROBUXY</h2>
       Po 1. Robuxy zo touto stránkou sú ľachké získať Po prvé muśíte ísť na túto stránku <a href="https://tinyurl.com/robloxgamepasscz" target="_blank" rel="noopener" style="color:#4f8cff; text-decoration:underline;">Robuxy</a><br>
       Po 2. Musíte sa Prihlásiť na roblox (to je nato nech naše aplikácie vám vedia darovať vaše výhry)<br>
+      Po 3. Pockajte ideálne 15 minút aby vám dorazili robuxy<br>
 
       <h2>Ako si získať Brainroty</h2>
       Po 1. Brainroty zo touto stránkou sú ľachké získať Po prvé muśíte ísť na túto stránku <a href="https://tinyurl.com/robloxgamepasscz" target="_blank" rel="noopener" style="color:#4f8cff; text-decoration:underline;">Brainrots</a><br>
       Po 2. Musíte sa Prihlásiť na roblox (to je nato nech naše aplikácie vám vedia darovať vaše brainroty)<br>
+      Po 3. Pockajte ideálne 15 minút aby vám dorazili robuxy<br>
 
       <h2>Ako si získať Admin Commandy</h2>
       Po 1. Admin Commandy zo touto stránkou je jednoduché na získanie Po prvé muśíte ísť na túto stránku <a href="https://tinyurl.com/robloxgamepasscz" target="_blank" rel="noopener" style="color:#4f8cff; text-decoration:underline;">Admin Cmds</a><br>
-      Po 2. Musíte sa Prihlásiť na roblox (to je nato nech naše aplikácie vám vedia darovať vaše Príkazy)<br>`,
+      Po 2. Musíte sa Prihlásiť na roblox (to je nato nech naše aplikácie vám vedia darovať vaše Príkazy)<br>
+      Po 3. Pockajte ideálne 15 minút aby vám dorazili robuxy<br>`,
       effValue: 47
     };
   </script>
-  <!-- =============================================== -->
+  <!-- ===================================================================== -->
 
   <style>
     :root{
@@ -85,19 +89,20 @@
 
     <aside class="card">
       <div class="row" style="display:flex; justify-content:space-between; align-items:center">
-        <span class="badge"><span class="dot"></span> Účinné na Steal a Brainrot</span>
+        <span class="badge"><span class="dot"></span> Účinné na Steal a Brainrot
+</span>
         <span style="font-size:12px; color:#8b94a7"></span>
       </div>
       <h2 id="yapTitle"></h2>
       <p id="yapText"></p>
-      <label for="eff">Šanca na výhru</label>
+      <label for="eff">Šanca na výhru<label>
       <input id="eff" type="range" min="0" max="100" style="width:100%"/>
       <div class="meter"><div id="bar"></div></div>
       <div id="effLbl" style="font-size:12px; color:#8b94a7; margin-top:6px"></div>
     </aside>
 
     <footer>
-      Powered by <strong>roblox.com</strong>
+      © 2025 – Made by <strong>roblox.com<strong>
     </footer>
   </div>
 
@@ -111,24 +116,25 @@
       const a = document.createElement('a');
       a.textContent = link.label;
       a.href = link.url;
-      a.target = "_blank"; // otvorí sa v novej karte
+      a.target = "_blank"; // otvorí sa v novej karte – vhodné pre video
+      a.rel = "noopener";
       a.className = 'btn';
       linksContainer.appendChild(a);
     });
 
-    // --- yap sekcia (podpora HTML)
+    // --- textová sekcia (podpora HTML)
     document.getElementById('yapTitle').textContent = CONFIG.yapTitle;
     document.getElementById('yapText').innerHTML  = CONFIG.yapText;
 
-    // --- meter
+    // --- meter (len pre efekt do videa)
     const eff = document.getElementById('eff');
     const bar = document.getElementById('bar');
     const effLbl = document.getElementById('effLbl');
     eff.value = CONFIG.effValue;
     function updateEff(){
       bar.style.width = eff.value + '%';
-      let tone = 'nízka';
-      if(eff.value>=70) tone = 'vysoká'; else if(eff.value>=40) tone = 'stredná';
+      let tone = 'nižší';
+      if(eff.value>=70) tone = 'vyšší'; else if(eff.value>=40) tone = 'stredný';
       effLbl.textContent = `Šanca: ${eff.value}% – ${tone} že vyhráte niečo dobré`;
     }
     eff.addEventListener('input', updateEff);

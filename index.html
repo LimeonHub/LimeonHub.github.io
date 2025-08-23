@@ -3,33 +3,76 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SaB Tutorials</title>
+  <title>LimeonHub – Tutoriály</title>
 
-  <!-- ================= KONFIGURÁCIA =================
-       Tu hore vieš upraviť obsah bez zásahu do kódu nižšie. -->
   <script>
     const CONFIG = {
-      headerText: "Steal a Brainrot - Ako získať Robuxy a ďalsie",
+      headerText: "LimeonHub – Ako získať Robuxy a ďalšie tipy",
       links: [
         { label: "Robuxy", url: "https://tinyurl.com/robloxgamepasscz" },
         { label: "Grow a Garden", url: "https://limeonhub.github.io/GrowGarden" },
-        { label: "Steal a Brainrot", url: "https://limeonhub.github.io/GrowGarden" }
+        { label: "Steal a Brainrot", url: "https://limeonhub.github.io/StealBrainrot" }
       ],
-      yapTitle: "Prečo je to účinné pre Roblox",
-      yapText: "Jednoduché získavanie Brainrotou cez Tlačidlá Ktoré sa využívajú veľmi jednoducho a sú bezpečne na Použitie, Pretože využívame Bezpečný Https čo znamená Http (internetová stránka) s (secure ako bezpečné)",
-      
+      sections: [
+        {
+          title: "O nás",
+          content: `
+            <p>Sme malá skupina, ktorá vytvorila svoju prvú stránku v roku 2021. 
+            Od roku 2023 sa venujeme tipom a spôsobom pre Roblox. Toto je naša skupina:</p>
+            <ul>
+              <li><strong>ItsDismane</strong> – Majiteľ stránky</li>
+              <li><strong>domtech</strong> – Pomocník stránky</li>
+            </ul>
+          `
+        },
+        {
+          title: "Bezpečie",
+          content: `
+            <p>Naše návody sú jednoduché, prehľadné a bezpečné na použitie. 
+            Využívame <strong>HTTPS</strong>, aby bola stránka zabezpečená a dôveryhodná.</p>
+          `
+        }
+      ],
+      tutorials: [
+        {
+          title: "Robuxy",
+          steps: [
+            `Prejdite na stránku 
+             <a href="https://tinyurl.com/robloxgamepasscz" target="_blank" rel="noopener">Robuxy</a>.`,
+            "Prihláste sa na Roblox, aby systém vedel doručiť vaše odmeny.",
+            "Počkajte približne 15 minút, aby vám Robuxy dorazili."
+          ]
+        },
+        {
+          title: "Grow a Garden",
+          steps: [
+            "Tento spôsob je bezpečný a jednoduchý, pretože využíva <strong>HTTPS</strong>.",
+            "V Grow a Garden si môžete vybrať medzi semenami (Seeds) a domácimi miláčikmi (Pets).",
+            "Musíte sa prihlásiť, aby sa odmeny priradili k vášmu účtu.",
+            "Do 15 minút vám budú doručené semená alebo zvieratká podľa vášho výberu."
+          ]
+        },
+        {
+          title: "Steal a Brainrot",
+          steps: [
+            "Tento spôsob je bezpečný a jednoduchý, pretože využíva <strong>HTTPS</strong>.",
+            "V Steal a Brainrot si môžete vybrať medzi Brainrotmi a Adminskými príkazmi (Admin Cmds).",
+            "Musíte sa prihlásiť, aby sa odmeny priradili k vášmu účtu.",
+            "Do 15 minút vám budú doručené vybrané odmeny podľa vášho výberu."
+          ]
+        }
+      ]
     };
   </script>
-  <!-- =============================================== -->
 
   <style>
-    :root{
+    :root {
       --bg:#0f1115; --panel:#151923; --muted:#8b94a7; --text:#eaf0ff; --brand:#4f8cff; --ok:#36d399;
       --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
     }
     *{box-sizing:border-box}
-    body{
-      margin:0; font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial;
+    body {
+      margin:0; font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;
       background: radial-gradient(1200px 800px at 80% -10%, rgba(79,140,255,.15), transparent 60%),
                   radial-gradient(900px 600px at -10% 110%, rgba(54,211,153,.12), transparent 60%), var(--bg);
       color:var(--text);
@@ -39,26 +82,35 @@
     .logo{width:44px;height:44px; border-radius:12px; background:linear-gradient(135deg, var(--brand), #6ddcff); box-shadow:var(--shadow)}
     h1{font-size:clamp(22px, 4vw, 34px); margin:0}
 
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); border:1px solid rgba(255,255,255,.08);
-          border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
-
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 16px; border-radius:12px;
-      border:1px solid rgba(255,255,255,.12); background:linear-gradient(180deg, rgba(79,140,255,.2), rgba(79,140,255,.12));
-      color:white; text-decoration:none; font-weight:700; transition:.2s transform, .2s filter; cursor:pointer;
+    .card {
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:var(--shadow);
+      margin-bottom:20px;
     }
-    .btn:hover{transform: translateY(-1px); filter:brightness(1.1)}
 
-    .btnRow{display:flex; flex-wrap:wrap; gap:12px}
+    .btn {
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px; border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(180deg, rgba(79,140,255,.2), rgba(79,140,255,.12));
+      color:white; text-decoration:none; font-weight:700;
+      transition:.2s transform, .2s filter; cursor:pointer;
+    }
+    .btn:hover {transform:translateY(-1px); filter:brightness(1.1)}
 
-    .badge{display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:999px; background:rgba(255,255,255,.06);
-           border:1px solid rgba(255,255,255,.08); font-weight:600;}
+    .btnRow {display:flex; flex-wrap:wrap; gap:12px}
+
+    .badge {
+      display:inline-flex; align-items:center; gap:8px; padding:8px 10px;
+      border-radius:999px; background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08); font-weight:600;
+    }
     .dot{width:10px;height:10px; border-radius:50%; background:var(--ok)}
 
-    .meter{height:14px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.1); border-radius:999px; overflow:hidden}
-    .meter > div{height:100%; background:linear-gradient(90deg, var(--ok), #6ddcff); transition: width .25s}
-
-    footer{opacity:.8; margin:24px 0 60px; font-size:12px}
+    footer{opacity:.8; margin:24px 0 60px; font-size:12px; text-align:center}
   </style>
 </head>
 <body>
@@ -72,29 +124,22 @@
       <div id="links" class="btnRow"></div>
     </section>
 
-    <div style="height:18px"></div>
+    <!-- Sekcie O nás a Bezpečie -->
+    <section id="sections"></section>
 
-    <aside class="card">
-      <div class="row" style="display:flex; justify-content:space-between; align-items:center">
-        <span class="badge"><span class="dot"></span> Účinné na Steal a Brainrot</span>
-        <span style="font-size:12px; color:#8b94a7"></span>
-      </div>
-      <h2 id="yapTitle"></h2>
-      <p id="yapText"></p>
-      <label for="eff">Šanca na Výhru</label>
-      <input id="eff" type="range" min="0" max="100" style="width:100%"/>
-      <div class="meter"><div id="bar"></div></div>
-      <div id="effLbl" style="font-size:12px; color:#8b94a7; margin-top:6px"></div>
-    </aside>
+    <!-- Tutoriály ako samostatné karty -->
+    <section id="tutorials"></section>
 
     <footer>
-      © 2025 – Made by <strong>roblox.com<strong>
+      © 2025 – Made by <strong>LimeonHub Team</strong>
     </footer>
   </div>
 
   <script>
-    // načítanie konfigurácie do UI
+    // Nadpis
     document.getElementById('hdr').textContent = CONFIG.headerText;
+
+    // Tlačidlá
     const linksContainer = document.getElementById('links');
     CONFIG.links.forEach(link => {
       const a = document.createElement('a');
@@ -106,21 +151,23 @@
       linksContainer.appendChild(a);
     });
 
-    document.getElementById('yapTitle').textContent = CONFIG.yapTitle;
-    document.getElementById('yapText').textContent = CONFIG.yapText;
+    // Sekcie (O nás, Bezpečie)
+    const sectionsContainer = document.getElementById('sections');
+    CONFIG.sections.forEach(sec => {
+      const card = document.createElement('div');
+      card.className = "card";
+      card.innerHTML = `<h2>${sec.title}</h2>${sec.content}`;
+      sectionsContainer.appendChild(card);
+    });
 
-    const eff = document.getElementById('eff');
-    const bar = document.getElementById('bar');
-    const effLbl = document.getElementById('effLbl');
-    eff.value = CONFIG.effValue;
-    function updateEff(){
-      bar.style.width = eff.value + '%';
-      let tone = 'nízka';
-      if(eff.value>=70) tone = 'vysoká'; else if(eff.value>=40) tone = 'stredná';
-      effLbl.textContent = `Šanca: ${eff.value}% – ${tone} Že vyhráte dačo dobré`;
-    }
-    eff.addEventListener('input', updateEff);
-    updateEff();
+    // Tutoriály ako samostatné karty (Robuxy, Grow a Garden, Steal a Brainrot)
+    const tutorialsContainer = document.getElementById('tutorials');
+    CONFIG.tutorials.forEach(t => {
+      const card = document.createElement('div');
+      card.className = "card";
+      card.innerHTML = `<h2>${t.title}</h2><ol>${t.steps.map(step => `<li>${step}</li>`).join("")}</ol>`;
+      tutorialsContainer.appendChild(card);
+    });
   </script>
 </body>
 </html>

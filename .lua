@@ -33,7 +33,7 @@ local Window = Rayfield:CreateWindow({
         FileName = "Key",
         SaveKey = true,
         GrabKeyFromSite = true,
-        Key = {"https://raw.githubusercontent.com/EnderSlovakD/DismaneScripts/refs/heads/main/KeySystem"}
+        Key = {"https://raw.githubusercontent.com/LimeonHub/LimeonHub.github.io/refs/heads/main/.txt"}
     }
 })
 Rayfield:Notify({

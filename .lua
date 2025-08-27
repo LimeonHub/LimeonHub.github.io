@@ -600,3 +600,69 @@ local Button = Tab:CreateButton({
 
     end,
 })
+local Tab = Window:CreateTab("🔥 Cosmetics", nil)
+
+-- HEADLESS
+local headlessEnabled = false
+
+local function applyHeadless(char)
+    if not headlessEnabled then return end
+    local head = char:FindFirstChild("Head")
+    if head then
+        head.Transparency = 1
+        if head:FindFirstChild("face") then
+            head.face.Transparency = 1
+        end
+        -- premiestni hlavu ďaleko, aby nezavadzala hitboxom
+        head.Size = Vector3.new(0.01,0.01,0.01)
+        head.Mesh.Scale = Vector3.new(0,0,0)
+    end
+end
+
+Tab:CreateToggle({
+    Name = "Headless",
+    CurrentValue = false,
+    Flag = "HeadlessToggle",
+    Callback = function(Value)
+        headlessEnabled = Value
+        local char = game.Players.LocalPlayer.Character
+        if char then
+            applyHeadless(char)
+        end
+    end,
+})
+
+-- Aplikuje znova pri každom respawne
+game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
+    char:WaitForChild("Head")
+    applyHeadless(char)
+end)
+
+-- FIRE EFFECT (ako predtým)
+local fireEnabled = false
+
+Tab:CreateToggle({
+    Name = "Fire Effect",
+    CurrentValue = false,
+    Flag = "FireToggle",
+    Callback = function(Value)
+        fireEnabled = Value
+        local char = game.Players.LocalPlayer.Character
+        if not char then return end
+        local hrp = char:FindFirstChild("HumanoidRootPart")
+        if not hrp then return end
+
+        if fireEnabled then
+            if not hrp:FindFirstChild("Fire") then
+                local fire = Instance.new("Fire")
+                fire.Size = 25
+                fire.Heat = 15
+                fire.Parent = hrp
+            end
+        else
+            if hrp:FindFirstChild("Fire") then
+                hrp.Fire:Destroy()
+            end
+        end
+    end,
+})
